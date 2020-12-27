@@ -2,8 +2,6 @@ const toDoForm = document.querySelector('.js-todo-form');
 const toDoInput = toDoForm.querySelector('input');
 const toDoList = document.querySelector('.js-todo-list');
 
-const TODOS_LS = 'toDos';
-
 const toDos = [];
 
 function deleteToDo(event) {
@@ -12,7 +10,6 @@ function deleteToDo(event) {
     toDoList.removeChild(li);
 
     const index = toDos.findIndex(function(item) { return item.id == li.id });
-    console.log(`index : ${index}`);
     toDos.splice(index, 1);
     
     saveToDos();
@@ -24,13 +21,17 @@ function saveToDos() {
 
 function paintToDo(text) {
     const span = document.createElement("span");
+    span.className = "todo-item-title";
     span.innerText = text;
 
     const delBtn = document.createElement("button");
+    delBtn.className = "todo-item-btn";
     delBtn.innerHTML = "❌";
     delBtn.addEventListener("click", deleteToDo);
 
     const li = document.createElement("li");
+    li.className = "todo-item-container"
+
     const newId = toDos.length + 1;
 
     li.appendChild(span);

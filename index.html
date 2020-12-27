@@ -6,19 +6,27 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <div class="js-clock">
-      <h1 class="js-title">00:00</h1>
+    <div class="js-welcome-container welcome-container">
+      <span class="welcome-title">Hello, what's your name?</span>
+      <form class="js-welcome-form welcome-form">
+        <input type="text" class="js-welcome-input" />
+      </form>
     </div>
-    <form class="js-form form">
-      <input type="text" placeholder="what is your name?" />
-    </form>
-    <h4 class="js-greeting greeting"></h4>
-    <form class="js-todo-form">
-      <input type="text" placeholder="write todo list" />
-    </form>
-    <ul class="js-todo-list"></ul>
-    <span class="js-weather"></span>
 
+    <div class="js-greeting-container greeting-container">
+      <div class="js-clock clock">
+        <h1 class="clock-title">00:00</h1>
+      </div>
+      <h4 class="js-greeting-title greeting-title"></h4>
+      <span class="todo-description">pleasw write your todo</span>
+      <form class="js-todo-form todo-form">
+        <input type="text" />
+      </form>
+      <ul class="js-todo-list todo-list"></ul>
+      <span class="js-weather-title weather-title"></span>
+    </div>
+
+    <script src="constant/constant.js"></script>
     <script src="clock.js"></script>
     <script src="greeting.js"></script>
     <script src="todo.js"></script>

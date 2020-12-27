@@ -1,15 +1,91 @@
 body {
   color: white;
   background-color: slategrey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
-.form,
-.greeting {
+.greeting-container {
   display: none;
 }
 
 .showing {
   display: block;
+}
+
+.hiding {
+  display: none;
+}
+
+.greeting-container,
+.welcome-container {
+  margin-top: -200px;
+}
+
+.clock-title,
+.greeting-title,
+.welcome-title {
+  margin: 0px 0px;
+  font-size: 50px;
+  font-weight: 600;
+  text-align: center;
+  text-shadow: 2px 2px 2px gray;
+}
+
+.todo-form,
+.welcome-form {
+  margin-top: 40px;
+  width: 500px;
+  border-bottom: 2px solid white;
+}
+
+.todo-form input,
+.welcome-form input {
+  border: none;
+  text-align: center;
+  background-color: transparent;
+  width: 100%;
+  font-size: 40px;
+  font-weight: 600;
+  color: white;
+}
+
+.todo-form input:focus,
+.welcome-form input:focus {
+  outline: none;
+  color: white;
+}
+
+.todo-description {
+  font-size: 30px;
+  text-align: center;
+  margin-left: 110px;
+  text-shadow: 2px 2px 2px gray;
+}
+
+.todo-item-container {
+  margin-top: 10px;
+}
+
+.todo-item-title {
+  font-size: 20px;
+}
+
+.todo-item-btn {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  margin-left: 20px;
 }
 
 @keyframes fadeIn {

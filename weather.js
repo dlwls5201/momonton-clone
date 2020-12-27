@@ -1,7 +1,6 @@
 const weather = document.querySelector('.js-weather');
 
 const API_KEY = '95db538b6436a37a603b10c6911d79a0';
-const COORDS_LS = 'coords';
 
 function getWeather(lat, lng) {
     fetch(
@@ -42,12 +41,19 @@ function askForCoords() {
 
 function loadCoords() {
     const loadedCoords = localStorage.getItem(COORDS_LS);
-    if (loadedCoords === null) {
-        askForCoords();
-    } else {
-        const parsedCoords = JSON.parse(loadedCoords);
-        getWeather(parsedCoords.latitude, parsedCoords.longitude);
+    const currentUser = localStorage.getItem(CURRENT_USER_LS);
+    console.log(`loadedCoords : ${loadedCoords} , currentUser : ${currentUser}`);
+
+    if(currentUser === null) {
+        return;
     }
+
+    // if (loadedCoords === null) {
+    //     askForCoords();
+    // } else {
+    //     const parsedCoords = JSON.parse(loadedCoords);
+    //     getWeather(parsedCoords.latitude, parsedCoords.longitude);
+    // }
 }
 
 function init() {
