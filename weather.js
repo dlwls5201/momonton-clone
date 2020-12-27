@@ -1,4 +1,4 @@
-const weather = document.querySelector('.js-weather');
+const weatherTitle = document.querySelector('.js-weather-title');
 
 const API_KEY = '95db538b6436a37a603b10c6911d79a0';
 
@@ -12,7 +12,7 @@ function getWeather(lat, lng) {
     .then(function(json) {
         const temperture = json.main.temp;
         const place = json.name;
-        weather.innerText = `${temperture} @ ${place}`
+        weatherTitle.innerText = `${temperture}℃ @ ${place}`
     })
 }
 
@@ -48,12 +48,12 @@ function loadCoords() {
         return;
     }
 
-    // if (loadedCoords === null) {
-    //     askForCoords();
-    // } else {
-    //     const parsedCoords = JSON.parse(loadedCoords);
-    //     getWeather(parsedCoords.latitude, parsedCoords.longitude);
-    // }
+    if (loadedCoords === null) {
+        askForCoords();
+    } else {
+        const parsedCoords = JSON.parse(loadedCoords);
+        getWeather(parsedCoords.latitude, parsedCoords.longitude);
+    }
 }
 
 function init() {

@@ -12,20 +12,13 @@ body {
   overflow-x: hidden;
 }
 
-.greeting-container {
-  display: none;
-}
-
-.showing {
-  display: block;
-}
-
-.hiding {
-  display: none;
-}
-
 .greeting-container,
 .welcome-container {
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin-top: -200px;
 }
 
@@ -66,7 +59,6 @@ body {
 .todo-description {
   font-size: 30px;
   text-align: center;
-  margin-left: 110px;
   text-shadow: 2px 2px 2px gray;
 }
 
@@ -88,6 +80,15 @@ body {
   margin-left: 20px;
 }
 
+.weather-title {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 20px;
+  font-size: 16px;
+  text-shadow: 2px 2px 2px gray;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -105,4 +106,12 @@ body {
   left: 0;
   z-index: -1;
   animation: fadeIn 0.5s linear;
+}
+
+.show {
+  visibility: visible;
+}
+
+.hide {
+  visibility: hidden;
 }
